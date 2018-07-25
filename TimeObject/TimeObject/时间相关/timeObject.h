@@ -1,5 +1,27 @@
-# TimeManagerWith
-iOS 获取时间处理时间等
+//
+//  timeObject.h
+//  TimeObject
+//
+//  Created by Luoh on 2018/7/25.
+//  Copyright © 2018年 timeObject. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+///时间格式 TimewWithMinus = 0 ///eg.1970-01-01    TimewWithColon ///eg.1970:00:00    TimewWithHan ///eg.1970年00月00日
+enum returnTimeType {
+    TimewWithMinus = 0, ///eg.1970-01-01
+    TimewWithColon,     ///eg.1970:00:00
+    TimewWithHan        ///eg.1970年00月00日
+};
+typedef enum returnTimeType returnTimeType;
+
+@interface timeObject : NSObject
+/**
+    初始化单例
+    时间相关
+ */
++(timeObject *)sharedInstance;
 /** 获取当前时间 */
 + (NSString*)getCurrentTimesAndreturnType:(returnTimeType)returnType;
 
@@ -20,3 +42,5 @@ iOS 获取时间处理时间等
 /** 聊天经常用的那种时间 上午下午 昨天今天  传时间戳*/
 + (NSString *)ChatingTime:(NSString *)timestring;
 + (int)getYearMonthAnd;
+
+@end
